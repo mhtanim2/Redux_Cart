@@ -1,0 +1,48 @@
+@import "color";
+
+@mixin headerTag($dir, $align, $justify) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+nav {
+  width: 100%;
+  padding: 1rem;
+  @include headerTag(row, center, space-between);
+  top: 0%;
+  background-color: $secondary;
+  z-index: 19;
+  position: sticky;
+  > h1 {
+    text-transform: uppercase;
+    color: $tertiary;
+  }
+  > .paths {
+    width: 20%;
+    margin-right: 2rem;
+    @include headerTag(row, center, space-between);
+
+    > a {
+      position: relative;
+      color: $tertiary;
+      margin: 1rem;
+      &:hover {
+        color: $primary;
+        opacity: 0.5;
+      }
+      > p {
+        position: absolute;
+        border-radius: 50%;
+        text-align: center;
+        top: -0.4rem;
+        right: -0.6rem;
+        height: 1.1rem;
+        width: 1.1rem;
+        color: $secondaryDark;
+        background: $tertiary;
+      }
+    }
+  }
+}

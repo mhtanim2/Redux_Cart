@@ -1,0 +1,50 @@
+@import "color";
+@mixin flexCenter($dir, $align, $justify) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+}
+.productList {
+  display: flex;
+  padding: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  color: $primary;
+  background-color: $tertiary;
+  width: 200px;
+  height: auto;
+  border-radius: 7px;
+  box-shadow: 2px 2px #d8d5d5;
+  margin: 2rem;
+  transition: all 0.5s;
+  @include flexCenter(column, center, center);
+
+  > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    vertical-align: top;
+  }
+  > h4 {
+    font-size: 1rem;
+    padding: 0rem 1rem;
+    color: $primary;
+  }
+  > h5 {
+  }
+  > .btn {
+    background-color: $secondary;
+    color: $tertiary;
+    transition: all 0.5s;
+    &:hover {
+      opacity: 0.9;
+      background-color: $secondaryDark;
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+}

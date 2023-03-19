@@ -1,0 +1,16 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+@import "color";
+@import "home";
+@import "header";
+@import "product";
+@import "cart";
+body {
+  background-color: $primary;
+  color: $tertiary;
+}

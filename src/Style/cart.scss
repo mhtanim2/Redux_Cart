@@ -1,0 +1,56 @@
+@import "color";
+@mixin flexCenter($dir, $align, $justify) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+}
+div {
+  .component {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+
+    tr {
+      td {
+        img {
+          width: 200px;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+    }
+    > aside {
+      border-radius: 100px 0 0 100px;
+      background-color: $primary;
+      color: $tertiary;
+      height: 100%;
+      width: 100%;
+      box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.182);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      > h2 {
+        margin: 1rem;
+        font: 100 1.8rem "Roboto";
+        letter-spacing: 2px;
+
+        &:last-of-type {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.qua {
+  @include flexCenter(row, center, center);
+  > button {
+    padding: 0.3rem;
+  }
+  > p {
+    vertical-align: middle;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+  }
+}
